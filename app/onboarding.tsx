@@ -165,7 +165,7 @@ export default function OnboardingScreen() {
   };
 
   const handleGetStarted = () => {
-    router.replace('/+not-found');
+    router.replace('/screens/landing_page');
   };
 
   const screen = onboardingScreens[currentScreen];
@@ -263,17 +263,7 @@ export default function OnboardingScreen() {
                 </View>
               </View>
               
-              <View style={styles.testimonialContainer}>
-                <View style={styles.starsContainer}>
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} color="#fbbf24" fill="#fbbf24" />
-                  ))}
-                </View>
-                <Text style={styles.testimonialText}>
-                  "Unione has revolutionized how our team operates. 40% more efficient!"
-                </Text>
-                <Text style={styles.testimonialAuthor}>- Sarah Johnson, CEO</Text>
-              </View>
+             
             </View>
           )}
         </Animated.View>
@@ -306,12 +296,7 @@ export default function OnboardingScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Bottom Note */}
-        {isLastScreen && (
-          <Text style={styles.bottomNote}>
-            No credit card required • 14-day free trial
-          </Text>
-        )}
+    
       </LinearGradient>
     </View>
   );
