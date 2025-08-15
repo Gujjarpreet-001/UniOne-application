@@ -29,9 +29,10 @@ import {
   CircleCheckIcon,
   CircleCheckBig,
 } from 'lucide-react-native';
-import GradientButton from '../components/gradient_button';
-import GradientText from '../components/gradient_text';
+
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import GradientButton from '@/app/components/gradient_button';
+import GradientText from '@/app/components/gradient_text';
 
 
 const { width, height } = Dimensions.get('window');

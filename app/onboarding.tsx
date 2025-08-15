@@ -24,13 +24,15 @@ import {
 
 const { width, height } = Dimensions.get('window');
 
+import type { ColorValue } from 'react-native';
+
 interface OnboardingScreen {
   id: number;
   title: string;
   subtitle: string;
   icon: React.ReactNode;
   highlights: string[];
-  gradient: string[];
+  gradient: readonly [ColorValue, ColorValue, ...ColorValue[]];
 }
 
 const onboardingScreens: OnboardingScreen[] = [
@@ -165,7 +167,7 @@ export default function OnboardingScreen() {
   };
 
   const handleGetStarted = () => {
-    router.replace('/screens/landing_page');
+    router.replace('/screens/(main_tabs)');
   };
 
   const screen = onboardingScreens[currentScreen];
