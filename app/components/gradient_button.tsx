@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Text, Pressable, Animated, StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import Colors from "../Utils/colors";
+import Colors from "../../Utils/colors";
 
 
 type GradientButtonProps = {

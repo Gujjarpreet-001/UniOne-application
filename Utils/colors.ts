@@ -11,7 +11,7 @@ const Colors = {
   gradientText: ["#2563eb", "#3949AB"] as [string, string],
 
   // Backgrounds
-  background: "#F5F5F5",
+  background: "#F1F5F9",
   cardBackground: "#FFFFFF",
 
   // Text

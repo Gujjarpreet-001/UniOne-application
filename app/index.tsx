@@ -167,7 +167,7 @@ export default function OnboardingScreen() {
   };
 
   const handleGetStarted = () => {
-    router.replace('/screens/(main_tabs)');
+    router.replace('/screens/(drawer)/(main_tabs)');
   };
 
   const screen = onboardingScreens[currentScreen];

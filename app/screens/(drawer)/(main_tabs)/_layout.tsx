@@ -57,6 +57,15 @@ export default function MainTabLayout() {
           ),
         }}
       />
+          <Tabs.Screen
+        name="parent_dashboard" 
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ size, color }) => (
+            <User size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

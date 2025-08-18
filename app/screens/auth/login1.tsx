@@ -1,3 +1,4 @@
+import AppHeader from '@/app/components/common_header';
 import { router } from 'expo-router';
 import { Eye, EyeOff, Lock, Mail, Smartphone } from 'lucide-react-native';
 import React, { useState } from 'react';
@@ -28,21 +29,21 @@ export default function LoginScreen1() {
     const [rememberMe, setRememberMe] = useState(false);
 
     const handleLogin = () => {
-      
-        if(loginMethod === 'phone'){
-              if (!phone) {
-            Alert.alert('Error', 'Please enter your phone number');
-            return;
-        }
+
+        if (loginMethod === 'phone') {
+            if (!phone) {
+                Alert.alert('Error', 'Please enter your phone number');
+                return;
+            }
             router.push('/screens/auth/otp_page');
-        }else{
-              if (!email || !password) {
-            Alert.alert('Error', 'Please fill in all fields');
-            return;
+        } else {
+            if (!email || !password) {
+                Alert.alert('Error', 'Please fill in all fields');
+                return;
+            }
+            router.push('/screens/(main_tabs)');
         }
-       router.push('/screens/(main_tabs)');
-        }
- 
+
     };
 
     return (
@@ -52,23 +53,16 @@ export default function LoginScreen1() {
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                 style={styles.keyboardView}
             >
+                <AppHeader />
                 <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                     {/* Header */}
-                    <View style={styles.header}>
-                        <View style={styles.logoContainer}>
-                            <View style={styles.logo}>
-                                <Text style={styles.logoText}>U</Text>
-                            </View>
-                            <Text style={styles.brandText}>
-                                My <Text style={styles.brandAccent}>Unione</Text>
-                            </Text>
-                        </View>
 
-                        <Text style={styles.title}>Get Started now</Text>
-                        <Text style={styles.subtitle}>
-                            Sign in to access your UNIONE account
-                        </Text>
-                    </View>
+
+                    <Text style={styles.title}>Get Started now</Text>
+                    <Text style={styles.subtitle}>
+                        Sign in to access your UNIONE account
+                    </Text>
+
 
                     {/* Login Method Toggle */}
                     <View style={styles.toggleContainer}>
@@ -98,12 +92,12 @@ export default function LoginScreen1() {
                                 {loginMethod === 'email' ? 'Email' : 'Phone Number'}
                             </Text>
                             <View style={styles.inputWrapper}>
-                                {loginMethod === 'email'?<Mail size={20} color="#9CA3AF" style={styles.inputIcon} />:
-                                <Smartphone size={20} color="#9CA3AF" style={styles.inputIcon} />}
+                                {loginMethod === 'email' ? <Mail size={20} color="#9CA3AF" style={styles.inputIcon} /> :
+                                    <Smartphone size={20} color="#9CA3AF" style={styles.inputIcon} />}
                                 <TextInput
                                     style={styles.input}
-                                    value={loginMethod === 'email'?email:phone}
-                                    onChangeText={loginMethod == 'email'?setEmail:setPhone}
+                                    value={loginMethod === 'email' ? email : phone}
+                                    onChangeText={loginMethod == 'email' ? setEmail : setPhone}
                                     placeholder={loginMethod === 'email' ? 'Enter your email' : 'Enter your phone number'}
                                     placeholderTextColor="#9CA3AF"
                                     keyboardType={loginMethod === 'email' ? 'email-address' : 'number-pad'}
@@ -127,7 +121,7 @@ export default function LoginScreen1() {
                                 />
                                 <TouchableOpacity
                                     onPress={() => setShowPassword(!showPassword)}
-                            
+
                                 >
                                     {showPassword ? <EyeOff size={20} color="#9CA3AF" /> : <Eye size={20} color="#9CA3AF" />}
                                 </TouchableOpacity>
@@ -139,9 +133,9 @@ export default function LoginScreen1() {
 
                     {/* Login Button */}
                     <TouchableOpacity
-                        style={[styles.loginButton, (loginMethod === 'email'?(!email || !password):!phone) && styles.loginButtonDisabled]}
+                        style={[styles.loginButton, (loginMethod === 'email' ? (!email || !password) : !phone) && styles.loginButtonDisabled]}
                         onPress={handleLogin}
-                        disabled={loginMethod === 'email'?(!email || !password):!phone}
+                        disabled={loginMethod === 'email' ? (!email || !password) : !phone}
                     >
                         <Text style={styles.loginButtonText}>Login</Text>
                     </TouchableOpacity>
@@ -217,6 +211,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         padding: 4,
         marginBottom: 32,
+        marginTop: 16,
     },
     toggleButton: {
         flex: 1,

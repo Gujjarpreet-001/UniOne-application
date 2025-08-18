@@ -3,7 +3,7 @@ import { Text, StyleSheet, TextStyle } from "react-native";
 import MaskedView from "@react-native-masked-view/masked-view";
 import { LinearGradient } from "expo-linear-gradient";
 import { StyleProp } from "react-native";
-import Colors from "../Utils/colors";
+import Colors from "../../Utils/colors";
 
 export default function GradientText({ text, style }:{text: string, style?: StyleProp<TextStyle>}) {
   return (
