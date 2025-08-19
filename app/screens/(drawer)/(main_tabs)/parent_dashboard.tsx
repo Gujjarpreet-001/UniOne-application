@@ -8,9 +8,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { GraduationCap, User, Mail, Phone, MapPin, CircleCheck as CheckCircle, Calendar, MessageCircle, ChartBar as BarChart3, FileText, Megaphone, DollarSign, Clock, Star, Award, TrendingUp } from 'lucide-react-native';
-import AppHeader from '@/app/components/common_header';
+import AppHeader from '@/components/common_header';
 import { Typography } from '@/Utils/typography';
-import StudentCard from '@/app/components/student_card';
+import StudentCard from '@/components/student_card';
 
 const MetricCard = ({ icon, title, value, subtitle, color = '#f59e0b', trend }: any) => {
   return (

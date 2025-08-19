@@ -16,7 +16,7 @@ import Animated, {
   withSpring,
   withSequence,
 } from 'react-native-reanimated';
-import { School } from '../../types/school';
+import { School } from '../types/school';
 
 
 const { width } = Dimensions.get('window');

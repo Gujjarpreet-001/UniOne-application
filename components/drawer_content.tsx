@@ -30,8 +30,10 @@ import {
   Megaphone,
   MessagesSquare,
   BookDashed,
+  User2,
 } from 'lucide-react-native';
 import { usePathname, useRouter } from 'expo-router';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 
 export function DrawerContent(props: DrawerContentComponentProps) {
   const router = useRouter();
@@ -39,9 +41,18 @@ export function DrawerContent(props: DrawerContentComponentProps) {
 
   const [expanded, setExpanded] = useState(false);
 
+      const navigation = useNavigation();
+  
+
+   const closeDrawer = () => {
+          navigation.dispatch(DrawerActions.closeDrawer());
+      };
+
   const menuItems = [
-        { label: 'Dashboard', icon : BookDashed, route: '/screens/(main_tabs)/parent_dashboard' },
-    { label: 'Attendance', icon: Calendar, route: 'screens/auth/otp_page', },
+    { label: 'Dashboard', icon : BookDashed, route: '/screens/(main_tabs)/parent_dashboard' },
+
+    { label: 'Student', icon : User2, route: 'screens/management/student_list' },
+    { label: 'Attendance', icon: Calendar, route: 'screens/(drawer)/attendance_page', },
     { label: 'Grades', icon: BookOpen, route: '/screens/(main_tabs)' },
     { label: 'Schedule', icon: Calendar1, route: '/screens/(main_tabs)' },
     { label: 'Fees', icon: IndianRupee, route: '/screens/(main_tabs)' },
@@ -86,7 +97,10 @@ export function DrawerContent(props: DrawerContentComponentProps) {
               style={[styles.menuItem, ( pathname === item.route) && styles.activeItem]}
               onPress={() => {
                 console.log(`Navigating to ${item.route} ${pathname}`);
-                router.navigate(item.route as any);
+                props.navigation.closeDrawer()
+                router.replace(item.route as any,{
+                  dangerouslySingular: true,
+                });
 
               }}
             >

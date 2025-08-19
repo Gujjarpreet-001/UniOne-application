@@ -1,4 +1,4 @@
-import AppHeader from '@/app/components/common_header';
+import AppHeader from '@/components/common_header';
 import { router } from 'expo-router';
 import { Eye, EyeOff, Lock, Mail, Smartphone } from 'lucide-react-native';
 import React, { useState } from 'react';
@@ -41,7 +41,7 @@ export default function LoginScreen1() {
                 Alert.alert('Error', 'Please fill in all fields');
                 return;
             }
-            router.push('/screens/(main_tabs)');
+            router.push('/screens/auth/otp_page');
         }
 
     };

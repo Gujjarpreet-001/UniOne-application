@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { School, SchoolFilters } from '../../../../types/school';
-import SchoolCard from '../../../components/school_card';
-import SearchBar from '@/app/components/search_bar';
-import FilterModal from '@/app/components/filter_modal';
+import SchoolCard from '../../../../components/school_card';
+import SearchBar from '@/components/search_bar';
+import FilterModal from '@/components/filter_modal';
 
 
 const schoolsData: School[] = [

@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Users, Calendar, BookOpen, MessageCircle, CalendarCheck, TrendingUp, DollarSign, CircleAlert as AlertCircle, FileText } from 'lucide-react-native';
-import TeacherCard from '@/app/components/teacher_card';
-import AppHeader from '@/app/components/common_header';
-import TeacherMetalCard from '@/app/components/teacher_card_new';
+import { Users, Calendar, BookOpen, MessageCircle, CalendarCheck, TrendingUp, DollarSign, CircleAlert as AlertCircle, FileText, IndianRupee, File, Megaphone } from 'lucide-react-native';
+import AppHeader from '@/components/common_header';
+import TeacherMetalCard from '@/components/teacher_card_new';
 
 const MetricCard = ({ icon, title, value, subtitle, color = '#f59e0b', trend }: any) => {
   return (
@@ -151,6 +150,26 @@ export default function DashboardScreen() {
               icon={<CalendarCheck size={24} color="white" />}
               title="Schedule"
               gradient={['#ec4899', '#db2777']}
+            />
+             <QuickAccessButton
+              icon={<IndianRupee size={24} color="white" />}
+              title="Fees"
+              gradient={['#eab308', '#ea580c']}
+            />
+              <QuickAccessButton
+              icon={<File size={24} color="white" />}
+              title="Assignments"
+              gradient={['#14b8a6', '#0891b2']}
+            />
+                <QuickAccessButton
+              icon={<MessageCircle size={24} color="white" />}
+              title="Messages"
+              gradient={['#6366f1', '#2563eb']}
+            />
+                <QuickAccessButton
+              icon={<Megaphone size={24} color="white" />}
+              title="Announcements"
+              gradient={['#f43f5e', '#db2777']}
             />
           </View>
         </View>

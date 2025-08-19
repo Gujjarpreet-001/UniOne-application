@@ -1,11 +1,11 @@
 import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native';
 import { Menu, User } from 'lucide-react-native';
 import { DrawerActions } from '@react-navigation/native';
 
-const AppHeader = ({ showDrawer = true }: { showDrawer?: boolean }) => {
+const AppHeader = ({ showDrawer = true, actions, showAction = false,showLeading = false,leadingComponent }: { showDrawer?: boolean,showLeading?:boolean ,actions?: ReactNode, showAction?: boolean,leadingComponent?: ReactNode }) => {
     const insets = useSafeAreaInsets();
     const navigation = useNavigation();
     const openDrawer = () => {
@@ -26,11 +26,15 @@ const AppHeader = ({ showDrawer = true }: { showDrawer?: boolean }) => {
                 </TouchableOpacity>
             )}
 
+              {showLeading && (
+                leadingComponent
+            )}
+
             {/* Logo container */}
             <View
                 style={[
                     styles.logoContainer,
-                    showDrawer ? styles.centerLogo : styles.startLogo,
+                    (showDrawer || showLeading) ? styles.centerLogo : styles.startLogo,
                 ]}
             >
                 <View style={styles.logo}>
@@ -44,9 +48,9 @@ const AppHeader = ({ showDrawer = true }: { showDrawer?: boolean }) => {
             </View>
 
             {/* trailing button */}
-            <TouchableOpacity style={styles.profileButton}>
+            {showAction ? actions : <TouchableOpacity style={styles.profileButton}>
                 <User color="#64748b" size={24} />
-            </TouchableOpacity>
+            </TouchableOpacity>}
         </View>
     );
 };
