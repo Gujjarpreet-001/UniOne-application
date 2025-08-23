@@ -3,7 +3,7 @@ import { Drawer } from "expo-router/drawer";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function InitialLayout() {
-    return (
+  return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer
         drawerContent={DrawerContent}
@@ -20,17 +20,44 @@ export default function InitialLayout() {
           name="(main_tabs)"
           options={{ title: "Home" }}
         />
-         <Drawer.Screen
+        <Drawer.Screen
           name="management"
           options={{ title: "Home" }}
         />
-          <Drawer.Screen
+        <Drawer.Screen
           name="attendance_page"
-          
+
           options={{ title: "Attendance", }}
         />
-    
+
+        <Drawer.Screen
+          name="grades_module"
+
+          options={{ title: "Grades", }}
+        />
+
+          <Drawer.Screen
+          name="schedule_module"
+
+          options={{ title: "Schedule", }}
+        />
+               <Drawer.Screen
+          name="feedback_module"
+
+          options={{ title: "Feedback", }}
+        />
+                <Drawer.Screen
+          name="fees_module"
+
+          options={{ title: "Fees", }}
+        />
+                    <Drawer.Screen
+          name="announcement_module"
+
+          options={{ title: "Announcement", }}
+        />
+
       </Drawer>
     </GestureHandlerRootView>
-    );
+  );
 }

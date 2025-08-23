@@ -1,12 +1,13 @@
 {
-  "name": "expo-starter",
+  "name": "myunione",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "EXPO_NO_TELEMETRY=1 expo start",
     "build:web": "expo export --platform web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build:apk": "eas build -p android --profile preview"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.1",
@@ -38,7 +39,11 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.5",
+    "react-native-calendars": "^1.1313.0",
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-dropdown-picker": "^5.4.6",
+    "react-native-element-dropdown": "^2.12.4",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-otp-entry": "^1.8.5",
     "react-native-paper": "^5.14.5",

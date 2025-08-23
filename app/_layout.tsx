@@ -12,10 +12,20 @@ import {
   Inter_700Bold
 } from '@expo-google-fonts/inter';
 import AuthProvider from './context/AuthContext';
-import { PaperProvider } from 'react-native-paper';
+import { MD3LightTheme, PaperProvider } from 'react-native-paper';
 
 SplashScreen.preventAutoHideAsync();
-
+const theme = {
+  ...MD3LightTheme, // or MD3DarkTheme
+  colors: {
+    ...MD3LightTheme.colors,
+    primary: "#3B82F6",
+    secondary: "#03dac6",
+    background: "#f6f6f6",
+    surface: "#ffffff",
+    text: "#000000",
+  },
+}
 export default function RootLayout() {
   useFrameworkReady();
 
@@ -38,7 +48,7 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <PaperProvider>
+      <PaperProvider theme={theme}>
         <Stack screenOptions={{ headerShown: false }} initialRouteName="index">
           <Stack.Screen name="screens/(drawer)" options={{ headerShown: false }} />
 

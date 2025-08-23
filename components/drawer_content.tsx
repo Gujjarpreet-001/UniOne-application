@@ -53,13 +53,13 @@ export function DrawerContent(props: DrawerContentComponentProps) {
 
     { label: 'Student', icon : User2, route: 'screens/management/student_list' },
     { label: 'Attendance', icon: Calendar, route: 'screens/(drawer)/attendance_page', },
-    { label: 'Grades', icon: BookOpen, route: '/screens/(main_tabs)' },
-    { label: 'Schedule', icon: Calendar1, route: '/screens/(main_tabs)' },
-    { label: 'Fees', icon: IndianRupee, route: '/screens/(main_tabs)' },
+    { label: 'Grades', icon: BookOpen, route: '/screens/(drawer)/grades_module' },
+    { label: 'Schedule', icon: Calendar1, route: '/screens/(drawer)/schedule_module' },
+    { label: 'Fees', icon: IndianRupee, route: '/screens/(drawer)/fees_module' },
     { divider: true },
-    { label: 'Assignments', icon: File, route: '/(main_tabs)' },
-    { label: 'Announcement', icon: Megaphone, route: '/(main_tabs)' },
-     { label: 'Feedback', icon: MessagesSquare, route: '/(main_tabs)' },
+    { label: 'Assignments', icon: File, route: '/screens/(main_tabs)/teacher_dashboard' },
+    { label: 'Announcement', icon: Megaphone, route: '/screens/(drawer)/announcement_module' },
+     { label: 'Feedback', icon: MessagesSquare, route: '/screens/(drawer)/feedback_module' },
 
   ];
 
