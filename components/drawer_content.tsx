@@ -50,8 +50,9 @@ export function DrawerContent(props: DrawerContentComponentProps) {
 
   const menuItems = [
     { label: 'Dashboard', icon : BookDashed, route: '/screens/(main_tabs)/parent_dashboard' },
+    { label: 'Management', icon : BookDashed, route: '/screens/(drawer)/management_module' },
 
-    { label: 'Student', icon : User2, route: 'screens/management/student_list' },
+    { label: 'Student', icon : User2, route: 'screens/student_module/student_list' },
     { label: 'Attendance', icon: Calendar, route: 'screens/(drawer)/attendance_page', },
     { label: 'Grades', icon: BookOpen, route: '/screens/(drawer)/grades_module' },
     { label: 'Schedule', icon: Calendar1, route: '/screens/(drawer)/schedule_module' },

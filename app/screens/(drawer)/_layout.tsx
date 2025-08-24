@@ -21,8 +21,8 @@ export default function InitialLayout() {
           options={{ title: "Home" }}
         />
         <Drawer.Screen
-          name="management"
-          options={{ title: "Home" }}
+          name="student_module"
+          options={{ title: "Student" }}
         />
         <Drawer.Screen
           name="attendance_page"
