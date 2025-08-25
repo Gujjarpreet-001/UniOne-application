@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   Switch,
-  SafeAreaView,
+  
 } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import {
@@ -20,6 +20,7 @@ import {
 } from 'lucide-react-native';
 import AppHeader from '@/components/common_header';
 import ReadMoreText from '@/components/read_more_text';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Announcement {
   id: string;
@@ -175,7 +176,7 @@ export default function AnnouncementsScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
 
         <AppHeader />
       {/* Header */}

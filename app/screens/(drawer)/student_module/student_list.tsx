@@ -7,13 +7,14 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  SafeAreaView,
+  
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import StudentCard, { Student } from "@/components/student_list_card";
 import AppHeader from "@/components/common_header";
 import CustomDropdown from "@/components/custom_dropdown";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const initialStudents: Student[] = [
@@ -142,7 +143,7 @@ export default function StudentListScreen() {
 
 
   return (
-    <SafeAreaView style={styles.container} >
+    <SafeAreaView style={styles.container} edges={[]}>
       <AppHeader />
       <FlatList
         data={students}
@@ -154,7 +155,7 @@ export default function StudentListScreen() {
 
       <TouchableOpacity
         style={styles.fab}
-        onPress={() => router.push("/screens/management/add_student")} //  navigate 
+        onPress={() => router.push("/screens/student_module/add_student")} //  navigate 
       >
         <Ionicons name="add" size={28} color="#fff" />
       </TouchableOpacity>

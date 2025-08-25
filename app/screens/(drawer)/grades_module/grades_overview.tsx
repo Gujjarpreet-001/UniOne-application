@@ -3,8 +3,9 @@ import AppHeader from "@/components/common_header";
 import { router } from "expo-router";
 import { ChevronLeft } from "lucide-react-native";
 import React from "react";
-import { View, Text, ScrollView, Dimensions, StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { LineChart, BarChart, ProgressChart } from "react-native-chart-kit";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -47,7 +48,7 @@ export default function GradesOverview() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
       <AppHeader showDrawer={false} showLeading={true} leadingComponent={
          <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
                 <ChevronLeft size={24} color="#fff" />

@@ -56,6 +56,11 @@ export default function InitialLayout() {
 
           options={{ title: "Announcement", }}
         />
+                       <Drawer.Screen
+          name="assignment_module"
+
+          options={{ title: "Assignment", }}
+        />
 
       </Drawer>
     </GestureHandlerRootView>

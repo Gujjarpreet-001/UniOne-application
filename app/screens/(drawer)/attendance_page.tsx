@@ -1,9 +1,10 @@
 import AppHeader from "@/components/common_header";
 import { useFocusEffect } from "expo-router";
 import * as React from "react";
-import { View, FlatList, StyleSheet, SafeAreaView } from "react-native";
+import { View, FlatList, StyleSheet } from "react-native";
 import { List, Checkbox, Menu, Button } from "react-native-paper";
 import { DatePickerModal } from "react-native-paper-dates";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Student {
   id: string;
@@ -115,7 +116,7 @@ export default function AttendanceScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
       <AppHeader />
       {/* Filter Bar */}
       <View style={styles.filterBar}>

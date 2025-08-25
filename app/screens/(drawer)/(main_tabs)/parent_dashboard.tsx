@@ -4,13 +4,14 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
+  
   TouchableOpacity,
 } from 'react-native';
 import { GraduationCap, User, Mail, Phone, MapPin, CircleCheck as CheckCircle, Calendar, MessageCircle, ChartBar as BarChart3, FileText, Megaphone, DollarSign, Clock, Star, Award, TrendingUp } from 'lucide-react-native';
 import AppHeader from '@/components/common_header';
 import { Typography } from '@/Utils/typography';
 import StudentCard from '@/components/student_card';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MetricCard = ({ icon, title, value, subtitle, color = '#f59e0b', trend }: any) => {
   return (
@@ -33,7 +34,7 @@ const MetricCard = ({ icon, title, value, subtitle, color = '#f59e0b', trend }: 
 };
 export default function ParentDashboard() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
       {/* Header */}
       <AppHeader />
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>

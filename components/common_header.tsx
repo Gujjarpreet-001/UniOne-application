@@ -16,7 +16,7 @@ const AppHeader = ({ showDrawer = true, actions, showAction = false,showLeading 
         <View
             style={[
                 styles.header,
-                { paddingTop: Platform.OS === 'ios' ? 0 : insets.top },
+                { paddingTop: Platform.OS === 'ios' ? insets.top : insets.top },
             ]}
         >
             {/* Menu button (only when showDrawer is true) */}

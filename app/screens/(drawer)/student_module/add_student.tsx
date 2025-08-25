@@ -4,9 +4,10 @@ import CustomTextInput from "@/components/custom_textinput";
 import { router } from "expo-router";
 import { ChevronLeft } from "lucide-react-native";
 import React, { useState } from "react";
-import { View, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { TextInput, Button, Title } from "react-native-paper";
 import { Dropdown } from "react-native-paper-dropdown"; // Correct import
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddStudentScreen() {
     const [name, setName] = useState("");
@@ -29,7 +30,7 @@ export default function AddStudentScreen() {
     ];
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container} edges={[]}>
             <AppHeader showLeading={true} showDrawer={false} leadingComponent={
                 <TouchableOpacity onPress={() => router.back()}>
                     <ChevronLeft size={28} color={'#3B82F6'} />

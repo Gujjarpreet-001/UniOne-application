@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList, Image, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import AppHeader from "@/components/common_header";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const reviews = [
   {
@@ -41,7 +42,7 @@ const reviews = [
 
 export default function ReviewsScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
       <AppHeader />
       {/* Header */}
       <View style={styles.header}>

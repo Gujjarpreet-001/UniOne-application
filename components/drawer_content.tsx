@@ -58,7 +58,7 @@ export function DrawerContent(props: DrawerContentComponentProps) {
     { label: 'Schedule', icon: Calendar1, route: '/screens/(drawer)/schedule_module' },
     { label: 'Fees', icon: IndianRupee, route: '/screens/(drawer)/fees_module' },
     { divider: true },
-    { label: 'Assignments', icon: File, route: '/screens/(main_tabs)/teacher_dashboard' },
+    { label: 'Assignments', icon: File, route: '/screens/(drawer)/assignment_module' },
     { label: 'Announcement', icon: Megaphone, route: '/screens/(drawer)/announcement_module' },
      { label: 'Feedback', icon: MessagesSquare, route: '/screens/(drawer)/feedback_module' },
 

@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Users, Calendar, BookOpen, MessageCircle, CalendarCheck, TrendingUp, DollarSign, CircleAlert as AlertCircle, FileText, IndianRupee, File, Megaphone } from 'lucide-react-native';
 import AppHeader from '@/components/common_header';
 import TeacherMetalCard from '@/components/teacher_card_new';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MetricCard = ({ icon, title, value, subtitle, color = '#f59e0b', trend }: any) => {
   return (
@@ -41,7 +42,7 @@ const QuickAccessButton = ({ icon, title, gradient }: any) => {
 
 export default function DashboardScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
          {/* Header */}
       <AppHeader />
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>

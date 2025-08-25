@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  SafeAreaView,
+ 
   TouchableOpacity,
 } from 'react-native';
 import { Calendar, Clock } from 'lucide-react-native';
@@ -12,6 +12,7 @@ import { ClassTimelineCard } from '@/components/class_timeline_card';
 import { DaySelector } from '@/components/date_selector';
 import { scheduleData } from '@/data/mobileScheduleData';
 import AppHeader from '@/components/common_header';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ScheduleScreen() {
   const [selectedDay, setSelectedDay] = useState('Tue');
@@ -34,7 +35,7 @@ export default function ScheduleScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={[]}>
         <AppHeader />
       <View style={styles.header}>
         <View style={styles.titleRow}>

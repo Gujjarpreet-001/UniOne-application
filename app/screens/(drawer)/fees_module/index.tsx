@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import AppHeader from "@/components/common_header";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const summaryData = [
     { id: "1", title: "Total Fees", value: "₹560950.00", icon: "creditcard", color: "#2563eb", bg: "#e0ecff" },
@@ -18,7 +19,7 @@ const feeRecords = [
 
 export default function FeesScreen() {
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container} edges={[]}>
             <AppHeader />
             {/* Top Summary Cards */}
             <View style={styles.summaryRow}>

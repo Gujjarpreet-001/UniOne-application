@@ -8,13 +8,14 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    SafeAreaView,
+   
     StatusBar,
     Alert,
     KeyboardAvoidingView,
     Platform,
     ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -47,7 +48,7 @@ export default function LoginScreen1() {
     };
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container} edges={[]}>
             <StatusBar barStyle="dark-content" backgroundColor="#F1F5F9" />
             <KeyboardAvoidingView
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

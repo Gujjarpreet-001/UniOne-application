@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,ReactNode } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useFrameworkReady } from '@/hooks/useFrameworkReady';
@@ -49,7 +49,8 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <PaperProvider theme={theme}>
-        <Stack screenOptions={{ headerShown: false }} initialRouteName="index">
+        <Stack screenOptions={{ headerShown: false }} initialRouteName='index'>
+         <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="screens/(drawer)" options={{ headerShown: false }} />
 
           {/* Auth flow screens (outside drawer/tabs) */}

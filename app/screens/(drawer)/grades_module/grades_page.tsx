@@ -1,10 +1,11 @@
 // App.tsx
 import React from "react";
-import { View, Text, ScrollView, StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import CircularProgress from "react-native-circular-progress-indicator";
 import AppHeader from "@/components/common_header";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function GradesPage() {
   const subjects = [
@@ -40,7 +41,7 @@ export default function GradesPage() {
   ];
 
   return (
-    <SafeAreaView  style={styles.container}>
+    <SafeAreaView  style={styles.container} edges={[]}>
         <AppHeader />
       <ScrollView contentContainerStyle={styles.scroll}>
         {subjects.map((subject, index) => {
